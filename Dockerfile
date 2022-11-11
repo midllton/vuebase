@@ -1,4 +1,4 @@
-FROM node:16 as build-stage
+FROM node:16.4.2 as build-stage
 
 LABEL maintainer=bao
 
@@ -7,7 +7,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN yarn install --registry=https://registry.npm.taobao.org
+RUN yarn
 RUN yarn build
 
 # production stage
